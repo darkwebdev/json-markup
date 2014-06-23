@@ -4,7 +4,7 @@ Prettyprint JSON to HTML
 
 It is available through npm
 
-	npm install json-markup
+	npm i darkwebdev/json-markup
 
 json-markup will take a JSON document and add markup to it so it can be styled in a browser.
 
