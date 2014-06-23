@@ -6,14 +6,21 @@ It is available through npm
 
 	npm install json-markup
 
-or as a [component](https://github.com/component/component) for the browser
-
-	component install mafintosh/json-markup
-
 json-markup will take a JSON document and add markup to it so it can be styled in a browser.
 
 ``` js
-var jsonMarkup = require('json-markup');
+require.config({
+    paths: {
+        jsonMarkup: '../node_modules/json-markup/index'
+    },
+    shim: {
+        jsonMarkup: {
+            exports: 'jsonmarkup'
+        }
+    }
+});
+
+var jsonMarkup = require('jsonMarkup');
 
 var html = jsonMarkup({hello:'world'});
 
