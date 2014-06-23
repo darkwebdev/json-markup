@@ -1,18 +1,18 @@
 var INDENT = '    ';
 
 var type = function(doc) {
-	if (doc === null) return 'null';
-	if (Array.isArray(doc)) return 'array';
-	if (typeof doc === 'string' && /^https?:/.test(doc)) return 'link';
+    if (doc === null) return 'null';
+    if (Array.isArray(doc)) return 'array';
+    if (typeof doc === 'string' && /^https?:/.test(doc)) return 'link';
 
-	return typeof doc;
+    return typeof doc;
 };
 
 var escape = function(str) {
-	return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 };
 
-module.exports = function(doc) {
+var jsonMarkup = function(doc) {
 	var indent = '';
 
 	var forEach = function(list, start, end, fn) {
